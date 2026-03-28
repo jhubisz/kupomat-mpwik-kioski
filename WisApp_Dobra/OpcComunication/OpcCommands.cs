@@ -1,0 +1,6 @@
+﻿namespace OpcComunication
+{
+    class OpcCommands
+    {
+    }
+}

@@ -8,6 +8,7 @@
 x64/
 x86/
 out/
+packages/
 
 # Visual Studio user and workspace files
 .vs/

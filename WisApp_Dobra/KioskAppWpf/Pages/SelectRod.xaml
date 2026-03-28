@@ -1,0 +1,99 @@
+﻿<Page x:Class="KioskAppWpf.Pages.SelectRod"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:clr="clr-namespace:System;assembly=mscorlib"
+      xmlns:Controls="clr-namespace:KioskAppWpf.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="SummaryPage" Background="#FF76CEF0"
+      Loaded="PageLoaded"
+      Unloaded="PageUnload">
+
+    <Page.Resources>
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Name}" Width="320" />
+            </StackPanel>
+        </DataTemplate>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter></ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter Property="Background" Value="Aqua" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid Name="mainGrid">
+        <Controls:PageHeader x:Name="phHead" Margin="30,40,30,0" VerticalAlignment="Top"/>
+
+        <Grid Margin="0,80,0,0" HorizontalAlignment="Center" Width="550" VerticalAlignment="Top" Height="30">
+            <Label Content="Podaj nazwę ROD:" Style="{StaticResource ResourceKey=LabelForm}"/>
+            <Controls:FocusableAutoCompleteBox 
+                x:Name="acbRod"
+                ItemsSource="{Binding Path=Rody}"
+                SelectedItem="{Binding Path=SelectedRod, Mode=TwoWay}" 
+                ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}"
+                ItemFilter="{Binding Path=RodFilter}"
+                SelectionChanged="acbRod_SelectionChanged"
+                Width="365" Height="30" VerticalContentAlignment="Center" Margin="135,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16" Foreground="#FF13293D">
+            </Controls:FocusableAutoCompleteBox>
+        </Grid>
+        <Grid Margin="0,115,0,0" HorizontalAlignment="Center" Width="420" VerticalAlignment="Top" x:Name="gTab" Visibility="Visible">
+            <TextBlock x:Name="lPressTab" Margin="78,6,0,0" Text="Po wybraniu ROD naciśnij TAB" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Text="&#xE7FD;" FontFamily="Segoe MDL2 Assets" FontSize="25" Width="50" Height="28" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+            <TextBlock x:Name="lPressBackspace" Margin="12,35,0,0" Text="Aby skasować wpis wciśnij BACKSPACE" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Text="&#xE7EA;" Margin="0,30,0,0" FontFamily="Segoe MDL2 Assets" FontSize="25" Width="50" Height="28" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+        </Grid>
+        <Grid Margin="0,115,0,0" HorizontalAlignment="Center" Width="420" VerticalAlignment="Top" x:Name="gTabToEdit" Visibility="Hidden">
+            <TextBlock x:Name="lPressTabToEdit" Margin="0,6,0,0" Text="Powrót do pola edycji – naciśnij TAB" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Text="&#xE7FD;" FontFamily="Segoe MDL2 Assets" FontSize="25" Width="50" Height="28" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+        </Grid>
+        <Grid Margin="0,115,0,0" HorizontalAlignment="Center" Width="430" VerticalAlignment="Top" x:Name="gEnter" Visibility="Hidden">
+            <TextBlock x:Name="lPressEnter" Margin="56,6,0,0" Text="Aby zatwierdzić naciśnij ENTER " Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Text="&#xE751;" FontFamily="Segoe MDL2 Assets" FontSize="25" Width="50" Height="28" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+
+            <TextBlock x:Name="lPressTabToEditSave" Margin="0,35,0,0" Text="Powrót do pola edycji – naciśnij TAB" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Text="&#xE7FD;" Margin="0,30,0,0" FontFamily="Segoe MDL2 Assets" FontSize="25" Width="50" Height="28" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+        </Grid>
+
+        <Grid Margin="0,185,0,0" HorizontalAlignment="Center" Width="700" VerticalAlignment="Top" x:Name="gShortcuts">
+            <Grid Name="gGoToRegularCustomers">
+                <Label Content="Naciśnij " Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Text="R" Margin="100,0,0,0" Width="36" Style="{StaticResource ResourceKey=TextBlockButton}" />
+                <TextBlock Margin="250,10,0,0" Name="tbGoToRegularCustomers" Text="- Przejdź do stałych klientów" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+            </Grid>
+            <Grid Name="gGoToManualEntry">
+                <Label Content="Naciśnij " Margin="0,45,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Margin="100,45,0,0" Text="2" Width="36" Style="{StaticResource ResourceKey=TextBlockButton}" />
+                <TextBlock Margin="250,55,0,0" Name="tbGoToManualEntry" Text="- Brak adresu, wprowadź ręcznie" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+            </Grid>
+            <Grid Name="gRestartEntry">
+                <Label Content="Naciśnij " Margin="0,90,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Margin="100,90,0,0" Text="DELETE" Width="95" FontSize="20" Padding="0,8,0,0" Style="{StaticResource ResourceKey=TextBlockButton}" />
+                <TextBlock Margin="250,100,0,0" Text="- Wprowadzanie adresu od nowa" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+            </Grid>
+            <Grid Name="gRestartTransaction">
+                <Label Content="Naciśnij " Margin="0,135,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Margin="100,135,0,0" Text="P.ALT" Width="70" Padding="0, 8, 0, 0" FontSize="20" Style="{StaticResource ResourceKey=TextBlockButton}" />
+                <Label Content="+" Margin="170,135,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Margin="185,135,0,0" Text="DEL" Width="55" Padding="0, 8, 0, 0" FontSize="20" Style="{StaticResource ResourceKey=TextBlockButton}" />
+                <TextBlock Margin="250,145,0,0" Text="- Wprowadzanie od nowa" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+            </Grid>
+        </Grid>
+        <Controls:PageFooter x:Name="pfCustomer" Margin="0" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>
