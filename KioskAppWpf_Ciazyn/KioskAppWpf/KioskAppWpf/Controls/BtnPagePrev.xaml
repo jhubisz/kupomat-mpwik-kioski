@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="KioskAppWpf.Controls.BtnPagePrev"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KioskAppWpf.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="300">
+    <Grid>
+        <TextBlock Text="&#xF0B0;" FontFamily="Segoe MDL2 Assets" FontSize="36" Background="#FF13293D" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF3E92CC" Margin="25,0,0,2" FontWeight="Bold"/>
+        <TextBlock Text="Poprzednia strona" FontFamily="Lucida Console" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF13293D" Margin="80,0,0,11" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

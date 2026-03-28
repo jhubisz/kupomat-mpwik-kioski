@@ -1,0 +1,16 @@
+﻿<Page x:Class="KioskAppWpf.Pages.UnknownCardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KioskAppWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="ErrorPage">
+
+    <Grid Background="#FF95C3E3" Margin="0,-1,0,1">
+        <TextBlock Margin="0,198,0,270" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFD10C13" FontFamily="Lucida Console" FontSize="24"><Run Text="Nieznana karta"/><Run Text="!"/></TextBlock>
+        <TextBlock Margin="0,227,0,241" TextAlignment="Center" TextWrapping="Wrap" Text="Skontatkuj się z obsługą obiektu poprzez wideodomofon" VerticalAlignment="Center" Foreground="#FFD10C13" FontFamily="Lucida Console" FontSize="18"/>
+
+    </Grid>
+</Page>

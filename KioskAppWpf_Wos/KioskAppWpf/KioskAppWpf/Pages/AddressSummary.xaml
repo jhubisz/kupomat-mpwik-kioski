@@ -1,0 +1,72 @@
+﻿<Page x:Class="KioskAppWpf.Pages.AddressSummary"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:KioskAppWpf.Controls" 
+      mc:Ignorable="d" 
+      d:DesignHeight="482" d:DesignWidth="792"
+      Title="SummaryPage" Background="#FF76CEF0"
+      Loaded="PageLoaded"
+      Unloaded="PageUnload">
+
+    <Grid Name="mainGrid">
+        <Controls:PageHeader x:Name="phHead" Margin="30,40,30,0" VerticalAlignment="Top"/>
+
+        <Grid Margin="150,65,150,0" HorizontalAlignment="Center" Width="492" VerticalAlignment="Top" Height="150">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Name="spCompanyName" Visibility="Collapsed" Margin="1">
+                    <TextBlock Text="Nazwa: " Name="lNazwa" Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbNazwa" Foreground="#FFD10C13"  Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spGmina" Margin="1">
+                    <TextBlock Text="Gmina: " Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbGmina" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spMiejscowosc" Margin="1">
+                    <TextBlock Text="Miejscowość: " Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbMiejscowosc" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spUlica" Margin="1">
+                    <TextBlock Text="Ulica: " Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbUlica" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spNrPosesji" Margin="1">
+                    <TextBlock Text="Nr posesji: " Name="lNumer" Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbNumer" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="1">
+                    <TextBlock Text="Nr umowy: " Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name ="tbNrUmowy" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spIloscZadeklarowana" Margin="1">
+                    <TextBlock Text="Ilość ścieków [m3]: " Width="200" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbIlosc" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="71,219,71,0" HorizontalAlignment="Center" Width="650" VerticalAlignment="Top" x:Name="gShortcuts">
+            <Label Content="Naciśnij " Style="{StaticResource ResourceKey=LabelButton}" />
+            <TextBlock Text="&#xE751;" Width="50" FontFamily="Segoe MDL2 Assets" FontSize="36" Margin="108,0,0,0" Style="{StaticResource ResourceKey=TextBlockButton}"/>
+            <TextBlock Margin="210,14,0,0" Text="- Zatwierdź i rozpocznij zrzut" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+
+            <Grid Name="gNextAddress">
+                <Label Content="Naciśnij " Margin="0,45,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+                <TextBlock Text="N" Width="36" FontSize="36" Margin="108,45,0,0"  Style="{StaticResource ResourceKey=TextBlockButton}"/>
+                <TextBlock Margin="210,55,0,0" Text="- Wprowadź kolejny adres" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+            </Grid>
+
+            <Label Content="Naciśnij " Margin="0,90,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+            <TextBlock Text="DELETE" Width="95" Padding="0, 8, 0, 0" FontSize="20" Margin="108,90,0,0"  Style="{StaticResource ResourceKey=TextBlockButton}"/>
+            <TextBlock Margin="210,100,0,0" Text="- Wprowadzanie od nowa" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+        </Grid>
+        <Controls:PageFooter x:Name="pfCustomer" Margin="0" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>

@@ -1,0 +1,18 @@
+﻿<Page x:Class="KioskAppWpf.Pages.Errors.NoFlowPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KioskAppWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="ErrorPage"
+      Loaded="PageLoad"
+      Unloaded="PageUnload">
+
+    <Grid Background="#FF76CEF0" Margin="0,-1,0,1">
+        <TextBlock Margin="0,-70,0,0" Text="Nie wykryto przepływu ścieków!" Style="{StaticResource ResourceKey=TextErrorHead}" />
+        <TextBlock Margin="0" Text="Sprawdź podłączenie lub skontatkuj się z obsługą obiektu" Style="{StaticResource ResourceKey=TextError}"/>
+        <TextBlock Margin="0,90,0,0" Text="Kod błędu err201: Brak przepływu ścieków po starcie zrzutu" Style="{StaticResource ResourceKey=TextError}"/>
+    </Grid>
+</Page>

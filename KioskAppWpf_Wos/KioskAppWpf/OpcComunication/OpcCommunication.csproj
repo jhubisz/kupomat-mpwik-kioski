@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10D70973-644C-44F6-BD1C-0F7545A9C4FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpcComunication</RootNamespace>
+    <AssemblyName>OpcComunication</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Opc.Ua.Client">
+      <HintPath>..\..\Opc.Ua.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Opc.Ua.Core">
+      <HintPath>..\..\Opc.Ua.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Devices\CameraReading.cs" />
+    <Compile Include="Devices\CodeState.cs" />
+    <Compile Include="Devices\DevicesState.cs" />
+    <Compile Include="Devices\DevicesSteering.cs" />
+    <Compile Include="Devices\Flow.cs" />
+    <Compile Include="Enums\Device.cs" />
+    <Compile Include="Enums\LightsCommand.cs" />
+    <Compile Include="Enums\LightsStatus.cs" />
+    <Compile Include="Enums\MeasCode.cs" />
+    <Compile Include="Enums\OpenedDeviceStatus.cs" />
+    <Compile Include="Enums\PermitCode.cs" />
+    <Compile Include="Enums\ReadyCode.cs" />
+    <Compile Include="Enums\StopCode.cs" />
+    <Compile Include="IOpcConfiguration.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="OpcClient.cs" />
+    <Compile Include="IOpcClient.cs" />
+    <Compile Include="ClientApi\ClientAPI.cs" />
+    <Compile Include="ClientApi\ClientDiscovery.cs" />
+    <Compile Include="ClientApi\ClientSubscription.cs" />
+    <Compile Include="ClientApi\Helpers.cs" />
+    <Compile Include="OpcCommands.cs" />
+    <Compile Include="OpcConfiguration.cs" />
+    <Compile Include="OpcConfigurationEntry.cs" />
+    <Compile Include="OpcManager.cs" />
+    <Compile Include="OpcParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DbCommunication\DbCommunication.csproj">
+      <Project>{989c3cbc-f8b5-439a-b874-580a238b9020}</Project>
+      <Name>DbCommunication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

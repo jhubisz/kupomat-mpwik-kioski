@@ -1,0 +1,71 @@
+# =========================
+# Visual Studio / .NET Framework / WPF
+# =========================
+
+# Build output
+[Bb]in/
+[Oo]bj/
+x64/
+x86/
+out/
+
+# Visual Studio user and workspace files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio database/cache files
+*.VC.db
+*.VC.opendb
+
+# ReSharper / Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+# Test / coverage output
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Logs
+*.log
+
+# NuGet package output
+*.nupkg
+*.snupkg
+
+# Publish / deployment output
+publish/
+app.publish/
+
+# ClickOnce generated files
+*.publishsettings
+
+# Local database files
+*.mdf
+*.ldf
+
+# Profiling / diagnostics
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Windows junk
+Thumbs.db
+Desktop.ini
+
+# WPF generated files
+*.g.cs
+*.g.i.cs
+*.baml
+
+# Blend / designer / generated cache
+Generated\ Files/
+*.cache

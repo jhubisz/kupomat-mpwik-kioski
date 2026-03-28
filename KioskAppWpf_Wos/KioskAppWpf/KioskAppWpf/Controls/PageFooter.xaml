@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="KioskAppWpf.Controls.PageFooter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KioskAppWpf.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="792
+             ">
+    <Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Margin="20,0,0,20" Height="96">
+            <StackPanel>
+                <TextBlock Text="Dane dostawcy" Style="{StaticResource ResourceKey=TextMainUnderline}"/>
+                <TextBlock x:Name="tbCustomerName" Text="" Style="{StaticResource ResourceKey=TextMain}"/>
+                <TextBlock x:Name="tbCustomerAddress1" Text="" Style="{StaticResource ResourceKey=TextMain}"/>
+                <TextBlock x:Name="tbCustomerAddress2" Text="" Style="{StaticResource ResourceKey=TextMain}"/>
+                <TextBlock x:Name="tbCustomerAddress3" Text="" Style="{StaticResource ResourceKey=TextMain}"/>
+            </StackPanel>
+        </Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Margin="280,0,0,20">
+            <StackPanel>
+                <TextBlock Text="Samochód" Style="{StaticResource ResourceKey=TextMainUnderline}"/>
+                <TextBlock x:Name="tbRegistrationNo" Text="" Style="{StaticResource ResourceKey=TextMain}"/>
+            </StackPanel>
+        </Grid>
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="240" Margin="260,0,0,20">
+            <TextBlock Text="Adres: " Width="90" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock x:Name="tbNoOfAddresses" Margin="80,0,0,0" Text="" Foreground="#FFD10C13" Width="25" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Name="tbMaxAddresses" Margin="110,0,0,0" Text="z 15" Width="90" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock Margin="0,25,0,0" Text="Ścieków (M3):" Width="165" Style="{StaticResource ResourceKey=TextMain}"/>
+            <TextBlock x:Name="tbTotalSewageAmount" Margin="145,25,0,0" Foreground="#FFD10C13" Width="90" Style="{StaticResource ResourceKey=TextMain}"/>
+        </Grid>
+    </Grid>
+</UserControl>

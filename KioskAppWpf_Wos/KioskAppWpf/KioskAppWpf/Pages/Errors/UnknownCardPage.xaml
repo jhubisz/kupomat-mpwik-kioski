@@ -1,0 +1,16 @@
+﻿<Page x:Class="KioskAppWpf.Pages.Errors.UnknownCardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KioskAppWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="ErrorPage">
+
+    <Grid Background="#FF76CEF0" Margin="0,-1,0,1">
+        <TextBlock Margin="0,-70,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFD10C13" FontFamily="Lucida Console" FontSize="24"><Run Text="Nie rozpoznano Twojej karty"/><Run Text="!"/></TextBlock>
+        <TextBlock Margin="0,0,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Skontatkuj się z obsługą obiektu" VerticalAlignment="Center" Foreground="#FFD10C13" FontFamily="Lucida Console" FontSize="18"/>
+
+    </Grid>
+</Page>

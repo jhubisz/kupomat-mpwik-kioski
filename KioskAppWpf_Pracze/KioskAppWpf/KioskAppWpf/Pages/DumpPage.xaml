@@ -1,0 +1,62 @@
+﻿<Page x:Class="KioskAppWpf.Pages.DumpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:KioskAppWpf.Controls" 
+      mc:Ignorable="d" 
+      d:DesignHeight="482" d:DesignWidth="792"
+      Title="SummaryPage" Background="#FF76CEF0"
+      Loaded="PageLoaded"
+      Unloaded="PageUnload">
+
+    <Page.Resources>
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Name}" Width="180" />
+                <Label Content="{Binding Wojewodztwo}" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+                <Label Content="/" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+                <Label Content="{Binding Powiat}" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Name="mainGrid">
+        <TextBlock Text="Aktualny stan zrzutu ścieków" x:Name="phHead" Margin="30,40,30,0" Style="{StaticResource ResourceKey=TextPageHead}"/>
+
+        <Grid Margin="188,65,141,0" HorizontalAlignment="Center" Width="463" VerticalAlignment="Top" Height="180">
+            <StackPanel Orientation="Vertical" Margin="1px">
+                <StackPanel Orientation="Horizontal" Name="spGmina">
+                    <TextBlock Text="Typ ścieków: " Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbSewageType" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Name="spMiejscowosc">
+                    <TextBlock Text="Zadeklarowana ilość: " Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbDeclaredAmount" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spUlica" Margin="0,10,0,0">
+                    <TextBlock Text="Aktualny przepływ (m3/h): " Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbFlow" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="spNrPosesji">
+                    <TextBlock Text="Aktualna objętość (m3): " Name="lNumer" Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbCurrentAmount" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Pomiar pH: " Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name ="tbPhMeter" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Pomiar temperatury: " Width="250" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                    <TextBlock Text="" Name="tbTempMeter" Foreground="#FFD10C13" Style="{StaticResource ResourceKey=TextMain}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Controls:PageFooter x:Name="pfCustomer" Margin="0" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>

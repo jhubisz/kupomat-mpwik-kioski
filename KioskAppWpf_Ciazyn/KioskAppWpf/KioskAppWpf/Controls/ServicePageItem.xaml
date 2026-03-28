@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="KioskAppWpf.Controls.ServicePageItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KioskAppWpf.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="38" Width="350" Height="16">
+    <Grid>
+        <TextBlock x:Name="tbName" Text="{Binding Path=ItemLabel}" FontFamily="Lucida Console" FontSize="12" VerticalAlignment="Top" Foreground="#FF13293D" Margin="10,2,40,2" FontWeight="Bold"/>
+        <TextBlock x:Name="tbDiodeRed" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="14" TextWrapping="Wrap" Text="&#xEA3B;" VerticalAlignment="Center" RenderTransformOrigin="0.583,1.583" Foreground="#FFFF1515"/>
+        <TextBlock x:Name="tbDiodeGreen" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="14" TextWrapping="Wrap" Text="&#xEA3B;" VerticalAlignment="Center" RenderTransformOrigin="0.583,1.583" Foreground="#FF1BA405"/>
+    </Grid>
+</UserControl>

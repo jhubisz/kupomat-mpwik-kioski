@@ -1,0 +1,31 @@
+﻿<Page x:Class="KioskAppWpf.Pages.CargoTypePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="clr-namespace:KioskAppWpf.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="SummaryPage" Background="#FF76CEF0"
+      Loaded="PageLoad"
+      Unloaded="PageUnload">
+
+    <Grid>
+        <TextBlock Text="Podaj rodzaj ścieków:" Margin="30,20,30,0" Style="{StaticResource ResourceKey=TextPageHead}"/>
+
+        <StackPanel x:Name="spCargoTypesItems" Height="308" Margin="0,50,0,0" VerticalAlignment="Top"/>
+
+        <Grid Margin="40 330 40 120">
+            <Grid Name="gLeftArrow">
+                <Label Content="&#xF0B0;" FontFamily="Segoe MDL2 Assets" FontSize="26" Width="36" Style="{StaticResource ResourceKey=LabelButton}" />
+                <Label Margin="40 4 0 0" Style="{StaticResource ResourceKey=LabelForm}">Poprzednia strona</Label>
+            </Grid>
+            <Grid Name="gRightArrow" HorizontalAlignment="Right">
+                <Label Margin="0 4 40 0" Style="{StaticResource ResourceKey=LabelForm}" HorizontalAlignment="Right">Następna strona</Label>
+                <Label Content="&#xF0AF;" FontFamily="Segoe MDL2 Assets" FontSize="26" Width="36" Style="{StaticResource ResourceKey=LabelButton}" HorizontalAlignment="Right" />
+            </Grid>
+        </Grid>
+        
+        <Controls:PageFooter x:Name="pfCustomer" Margin="0" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>

@@ -1,0 +1,33 @@
+﻿<Page x:Class="KioskAppWpf.Pages.ProbeService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:KioskAppWpf.Controls" 
+      mc:Ignorable="d" 
+      d:DesignHeight="492" d:DesignWidth="792"
+      Title="SummaryPage" Background="#FF76CEF0"
+      Loaded="PageLoad"
+      Unloaded="PageUnload">
+
+    <Page.Resources>
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Name}" Width="180" />
+                <Label Content="{Binding Wojewodztwo}" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+                <Label Content="/" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+                <Label Content="{Binding Powiat}" FontStyle="Italic" Foreground="DarkGray" FontSize="10" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Name="mainGrid">
+        <TextBlock Margin="00,100,0,0" Name="tbBottleNo" Text="Aktualny numer butelki: " Style="{StaticResource ResourceKey=TextPageHead}" />
+        <TextBlock Margin="30,131,30,0" Name="tbTrayNo" Text="Aktualny numer tacki: " Style="{StaticResource ResourceKey=TextPageHead}" />
+        <Grid Margin="40,250,40,0" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="gShortcuts" Visibility="Visible">
+            <Label Content="Naciśnij " Margin="0,50,0,0" Style="{StaticResource ResourceKey=LabelButton}" />
+            <TextBlock Text="R" Width="36" Margin="107,50,0,0"  Style="{StaticResource ResourceKey=TextBlockButton}"/>
+            <TextBlock Margin="155,60,0,0" Text="- Wydruk etykiety tacki i reset pobieraka" FontSize="20" Style="{StaticResource ResourceKey=TextMain}"/>
+        </Grid>
+    </Grid>
+</Page>
