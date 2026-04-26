@@ -60,6 +60,7 @@ namespace OpcComunication
         public short PressureMaxTime { get; set; }
 
         public bool KioskOpenState { get; set; }
+        public bool ProbeMoveOn { get; set; }
 
         public OpcParameters(OpcClient client, bool opcOn)
         {
@@ -98,9 +99,10 @@ namespace OpcComunication
             if (CarRegistrationNumberUnknown) parameters = parameters | OpcClient.Configuration.MaskRfidRegNoRecUnknown;
 
             if (KioskOpenState) parameters = parameters | OpcClient.Configuration.MaskKioskOpenState;
+            if (ProbeMoveOn) parameters = parameters | OpcClient.Configuration.MaskProbeMoveOn;
 
             OpcClient.WriteNewBlockValue(OpcClient.Configuration.VarAddressKioskToPlc1, parameters);
-                       
+
             OpcClient.WriteNewBlockValue(OpcClient.Configuration.VarAddressProbeStart, ProbeStart);
             OpcClient.WriteNewBlockValue(OpcClient.Configuration.VarAddressProbeMin, ProbeMin);
             OpcClient.WriteNewBlockValue(OpcClient.Configuration.VarAddressProbe1, Probe1);

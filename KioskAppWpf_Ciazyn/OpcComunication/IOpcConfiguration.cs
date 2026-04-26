@@ -172,6 +172,7 @@ namespace OpcCommunication
         uint MaskPressureBlockageOn { get; }
 
         uint MaskKioskOpenState { get; }
+        uint MaskProbeMoveOn { get; }
         #endregion
 
         #region Kiosk_To_PLC_2

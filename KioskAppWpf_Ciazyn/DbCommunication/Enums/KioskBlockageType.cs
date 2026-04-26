@@ -20,5 +20,6 @@
         ProbeError, // Blokada zgłaszania awarii pobieraka
         MeasuringPressure,
         PressureBlockageOn,
+        ProbeMove,
     }
 }

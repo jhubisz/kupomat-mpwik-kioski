@@ -245,7 +245,7 @@ namespace OpcCommunication
             opcParameters.MonitoringPressureOn = !config.KioskBlockages[KioskBlockageType.MeasuringPressure];
             opcParameters.PressureBlockageOn = !config.KioskBlockages[KioskBlockageType.PressureBlockageOn];
 
-            opcParameters.PaperEnd = printerOutOfPaperErrorState; 
+            opcParameters.PaperEnd = printerOutOfPaperErrorState;
             opcParameters.PrinterOn = !config.KioskBlockages[KioskBlockageType.Printer];
 
             opcParameters.ProbeStart = config.ConfigurationSettings[KioskConfigurationType.ProbeStartAfterPercent];
@@ -262,7 +262,7 @@ namespace OpcCommunication
 
             OpcParameters = opcParameters;
         }
-        
+
         public void SetKioskSeqAckToTrue()
         {
             OpcParameters.SeqAck = true;
@@ -396,10 +396,10 @@ namespace OpcCommunication
         private void CheckCodeStateInt<T>(CodeState<T> state, string varAddress)
         {
             var opcRead = Client.ReadValue(varAddress);
-            //if (uint.TryParse(opcRead, out uint opcState))
-            //{
-            //    state.PopulateStateInt(opcState);
-            //}
+            if (uint.TryParse(opcRead, out uint opcState))
+            {
+                state.PopulateStateInt(opcState);
+            }
         }
     }
 }

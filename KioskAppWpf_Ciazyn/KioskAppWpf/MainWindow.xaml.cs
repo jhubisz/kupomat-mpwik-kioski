@@ -1,11 +1,12 @@
-﻿using KioskAppWpf.WebApi;
-using DbCommunication;
+﻿using DbCommunication;
 using DbCommunication.Entities;
 using DbCommunication.Enums;
 using KioskAppWpf.Classes;
 using KioskAppWpf.Enums;
 using KioskAppWpf.Pages;
 using KioskAppWpf.Pages.Errors;
+using KioskAppWpf.WebApi;
+using Microsoft.Owin.Hosting;
 using OpcCommunication;
 using OpcCommunication.Devices;
 using OpcComunication.Devices;
@@ -26,7 +27,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Utilities.Classes;
-using Microsoft.Owin.Hosting;
 
 namespace KioskAppWpf
 {
@@ -2016,6 +2016,7 @@ namespace KioskAppWpf
                 OpcManager.OpcParameters.PressureMaxTime = KioskConf.ConfigurationSettings[KioskConfigurationType.PressureMaxTime];
 
                 OpcManager.OpcParameters.KioskOpenState = KioskConf.Open == KioskOpenState.Open;
+                OpcManager.OpcParameters.ProbeMoveOn = !KioskConf.KioskBlockages[KioskBlockageType.ProbeMove];
 
                 OpcManager.OpcParameters.UpdateOpcParameters();
 

@@ -52,7 +52,7 @@ namespace DbCommunication.Entities
 
             }
         }
-        
+
         private Dictionary<KioskBlockageType, bool> kioskBlockages;
         public Dictionary<KioskBlockageType, bool> KioskBlockages
         {
@@ -78,6 +78,7 @@ namespace DbCommunication.Entities
                     kioskBlockages.Add(KioskBlockageType.GatesSteering, false);
                     kioskBlockages.Add(KioskBlockageType.ProbeBottles, false);
                     kioskBlockages.Add(KioskBlockageType.ProbeError, false);
+                    kioskBlockages.Add(KioskBlockageType.ProbeMove, false);
                 }
                 return kioskBlockages;
             }

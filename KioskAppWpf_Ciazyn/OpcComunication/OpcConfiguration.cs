@@ -49,7 +49,7 @@ namespace OpcCommunication
         public string VarAddressPlcToKiosk1 { get; private set; }
         public string VarAddressPlcToKiosk2 { get; private set; }
         public string VarAddressPlcToKiosk3 { get; private set; }
-        
+
         public string VarAddressPlcToKioskPermitCode { get; private set; }
         public string VarAddressPlcToKioskReadyCode { get; private set; }
         public string VarAddressPlcToKioskStopCode { get; private set; }
@@ -107,7 +107,7 @@ namespace OpcCommunication
         public uint MaskSeqIdle { get; private set; }
         public uint MaskSeqHeld { get; private set; }
         public uint MaskSeqFinish { get; private set; }
-        
+
         public uint MaskSeqErrNoFlow { get; private set; }
         public uint MaskSeqErrDev { get; private set; }
         public uint MaskSeqErrAlarm { get; private set; }
@@ -139,7 +139,7 @@ namespace OpcCommunication
 
         public uint MaskPressureOk { get; private set; }
         #endregion
-        
+
         public List<OpcConfigurationEntry<Enums.PermitCode>> PlcToKioskPermitCode { get; private set; }
         public List<OpcConfigurationEntry<Enums.ReadyCode>> PlcToKioskReadyCode { get; private set; }
         public List<OpcConfigurationEntry<Enums.StopCode>> PlcToKioskStopCode { get; private set; }
@@ -181,6 +181,7 @@ namespace OpcCommunication
         public uint MaskPressureBlockageOn { get; private set; }
 
         public uint MaskKioskOpenState { get; private set; }
+        public uint MaskProbeMoveOn { get; private set; }
         #endregion
 
         #region Kiosk_To_PLC_2
@@ -834,6 +835,7 @@ namespace OpcCommunication
             MaskPressureBlockageOn = uint.Parse(ConfigurationManager.AppSettings["MaskPressureBlockageOn"]);
 
             MaskKioskOpenState = uint.Parse(ConfigurationManager.AppSettings["MaskKioskOpenState"]);
+            MaskProbeMoveOn = uint.Parse(ConfigurationManager.AppSettings["MaskProbeMoveOn"]);
         }
         private void PopulateMasksKioskToPlc2()
         {
